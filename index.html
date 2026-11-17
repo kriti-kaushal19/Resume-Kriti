@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kriti Kaushal | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bubbles" aria-hidden="true">
+    <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+    <span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble b6"></span>
+  </div>
+  <div class="hills" aria-hidden="true"><div class="hill h1"></div><div class="hill h2"></div></div>
+
+  <nav class="navbar glass">
+    <a class="logo" href="#home">Kriti Kaushal</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="photo-ring">
+        <img src="photo.jpg" alt="Photo of Kriti Kaushal" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'initials',textContent:'KK'}))">
+      </div>
+      <h1>Hi, I'm <span class="accent">Kriti Kaushal</span></h1>
+      <p class="tagline">Economics (Hons) student at Ramjas College, University of Delhi</p>
+      <div class="btn-row">
+        <a class="btn" href="#projects">View my work</a>
+        <a class="btn btn-green" href="#contact">Contact me</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card glass">
+        <p>I am an Economics (Hons) student at Ramjas College, University of Delhi. I enjoy understanding how people, markets and policies shape the world, and turning data into clear insights. I am always looking to learn new skills and take on projects that connect economics with real-world problems.</p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card glass">
+        <h3>B.A. (Hons) Economics</h3>
+        <p class="meta">Ramjas College, University of Delhi</p>
+        <p>Currently pursuing my undergraduate degree, studying microeconomics, macroeconomics, statistics and quantitative methods.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card glass">
+          <h3>Project One</h3>
+          <p>Replace with a short description of an economics, research or data project you have done.</p>
+        </article>
+        <article class="card glass">
+          <h3>Project Two</h3>
+          <p>Replace with a short description of a paper, presentation or society initiative.</p>
+        </article>
+        <article class="card glass">
+          <h3>Project Three</h3>
+          <p>Replace with another project, internship or case competition.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card glass">
+        <div class="pills">
+          <span class="pill">Economic Analysis</span>
+          <span class="pill">Statistics</span>
+          <span class="pill">Data Analysis</span>
+          <span class="pill">MS Excel</span>
+          <span class="pill">Research &amp; Writing</span>
+          <span class="pill">Communication</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <div class="grid">
+        <article class="card glass">
+          <h3>Certification One</h3>
+          <p>Add the course name, issuing organisation and year from your certificate.</p>
+        </article>
+        <article class="card glass">
+          <h3>Certification Two</h3>
+          <p>Add the course name, issuing organisation and year from your certificate.</p>
+        </article>
+        <article class="card glass">
+          <h3>Certification Three</h3>
+          <p>Add the course name, issuing organisation and year from your certificate.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card glass contact">
+        <p>Let's connect! Reach out for collaborations, internships or just a chat.</p>
+        <div class="btn-row">
+          <a class="btn" href="mailto:your.email@example.com">Email me</a>
+          <a class="btn btn-green" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; <span id="year">2026</span> Kriti Kaushal</footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+:root {
+  --sky: #5ec8f2;
+  --aqua: #7ff0e0;
+  --deep: #0b5d8a;
+  --text: #0d3b57;
+  --green: #6fd36b;
+  --green-dark: #2f9e44;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  min-height: 100vh;
+  background: linear-gradient(180deg, #4db8ee 0%, var(--sky) 35%, var(--aqua) 100%) fixed;
+}
+h1, h2, h3, .logo, .btn, .pill { font-family: 'Quicksand', sans-serif; }
+a { color: inherit; text-decoration: none; }
+
+/* Background: hills + bubbles */
+.hills { position: fixed; left: 0; bottom: 0; width: 100%; height: 22vh; z-index: -1; pointer-events: none; }
+.hill { position: absolute; bottom: -40%; border-radius: 50%; }
+.h1 { left: -15%; width: 75%; height: 130%; background: radial-gradient(circle at 50% 20%, #b6f08a, #4fbf5a); }
+.h2 { right: -20%; width: 85%; height: 115%; background: radial-gradient(circle at 50% 20%, #9be37a, #3aa84e); opacity: .95; }
+.bubbles { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.bubble {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle at 30% 28%, rgba(255,255,255,.9), rgba(255,255,255,.25) 40%, rgba(255,255,255,.08) 70%);
+  border: 1px solid rgba(255,255,255,.6);
+  box-shadow: inset 0 0 12px rgba(255,255,255,.5);
+  animation: float 14s ease-in-out infinite;
+}
+.b1 { width: 90px; height: 90px; left: 8%; top: 20%; }
+.b2 { width: 50px; height: 50px; left: 85%; top: 15%; animation-delay: -3s; }
+.b3 { width: 130px; height: 130px; left: 75%; top: 55%; animation-delay: -6s; }
+.b4 { width: 36px; height: 36px; left: 20%; top: 65%; animation-delay: -2s; }
+.b5 { width: 70px; height: 70px; left: 50%; top: 8%; animation-delay: -8s; }
+.b6 { width: 28px; height: 28px; left: 92%; top: 80%; animation-delay: -5s; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-28px); } }
+
+/* Frosted glass */
+.glass {
+  background: rgba(255,255,255,.45);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(255,255,255,.8);
+  box-shadow: 0 8px 28px rgba(11,93,138,.18), inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+/* Navbar */
+.navbar {
+  position: sticky; top: 12px; z-index: 50;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+  width: min(1000px, 94%); margin: 12px auto 0;
+  padding: .7rem 1.4rem; border-radius: 999px;
+}
+.logo { font-weight: 700; font-size: 1.2rem; color: var(--deep); }
+.nav-links { display: flex; gap: .3rem; list-style: none; }
+.nav-links a { padding: .4rem .9rem; border-radius: 999px; font-weight: 600; transition: background .2s; }
+.nav-links a:hover { background: rgba(255,255,255,.8); }
+.menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; color: var(--deep); cursor: pointer; }
+
+/* Layout */
+main { width: min(1000px, 92%); margin: 0 auto; padding-bottom: 28vh; }
+section { padding: 2.2rem 0 .5rem; }
+h2 { font-size: 1.9rem; color: #fff; text-shadow: 0 2px 6px rgba(11,93,138,.45); margin-bottom: 1rem; }
+.card { border-radius: 24px; padding: 1.6rem; }
+.card h3 { color: var(--deep); margin-bottom: .3rem; }
+.meta { font-weight: 700; color: #1a7a9c; margin-bottom: .4rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
+.grid .card { transition: transform .25s; }
+.grid .card:hover { transform: translateY(-6px); }
+
+/* Hero */
+.hero { text-align: center; padding-top: 3rem; }
+.photo-ring {
+  width: 180px; height: 180px; margin: 0 auto 1.2rem; border-radius: 50%; padding: 6px;
+  background: linear-gradient(145deg, #fff, var(--aqua));
+  box-shadow: 0 10px 30px rgba(11,93,138,.3), 0 0 0 6px rgba(255,255,255,.4);
+}
+.photo-ring img, .initials { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+.initials { display: flex; align-items: center; justify-content: center; font: 700 3.5rem 'Quicksand', sans-serif; color: #fff; background: linear-gradient(145deg, var(--sky), var(--deep)); }
+.hero h1 { font-size: clamp(2rem, 6vw, 3.2rem); color: #fff; text-shadow: 0 3px 8px rgba(11,93,138,.45); }
+.accent { color: #eaffb8; }
+.tagline { font-size: 1.2rem; font-weight: 600; margin: .5rem 0 1.4rem; color: var(--text); background: rgba(255,255,255,.4); display: inline-block; padding: .3rem 1.2rem; border-radius: 999px; }
+
+/* Glossy pill buttons */
+.btn-row { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1rem; }
+.btn {
+  position: relative; overflow: hidden; display: inline-block;
+  padding: .75rem 1.8rem; border-radius: 999px; font-weight: 700; color: #fff;
+  background: linear-gradient(180deg, #5fd4ff 0%, #1c9ad6 50%, #0b78b8 51%, #2db2e8 100%);
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow: 0 5px 14px rgba(11,93,138,.35), inset 0 -2px 4px rgba(0,0,0,.15);
+  text-shadow: 0 1px 2px rgba(0,0,0,.3);
+  transition: transform .2s, filter .2s;
+}
+.btn::before { content: ""; position: absolute; top: 3px; left: 8%; width: 84%; height: 45%; border-radius: 999px; background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.1)); }
+.btn-green { background: linear-gradient(180deg, #a9f57a 0%, #4fc24a 50%, #2f9e44 51%, #68d46a 100%); }
+.btn:hover { transform: translateY(-3px); filter: brightness(1.08); }
+
+/* Skills */
+.pills { display: flex; flex-wrap: wrap; gap: .7rem; }
+.pill { padding: .45rem 1.2rem; border-radius: 999px; font-weight: 700; color: var(--deep); background: linear-gradient(180deg, #fff, #d9f6ff); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 3px 8px rgba(11,93,138,.2); }
+
+.contact { text-align: center; }
+footer { text-align: center; padding: 1.2rem; font-weight: 700; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.35); position: relative; margin-top: -26vh; }
+
+/* Mobile */
+@media (max-width: 720px) {
+  .navbar { border-radius: 28px; }
+  .menu-toggle { display: block; }
+  .nav-links { display: none; flex-direction: column; width: 100%; padding-top: .6rem; }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; text-align: center; }
+  .photo-ring { width: 150px; height: 150px; }
+  .card { padding: 1.2rem; }
+}
+@media (prefers-reduced-motion: reduce) { .bubble { animation: none; } html { scroll-behavior: auto; } }
